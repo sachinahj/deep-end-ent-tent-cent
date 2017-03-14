@@ -26,8 +26,8 @@ const remove = function(pkg, type) {
 
     // after removing the package check if it had any dependencies and remove those
     if (dependenciesCache[pkg]) {
-      dependenciesCache[pkg].forEach(remPkg => {
-        remove(remPkg, "implicit");
+      dependenciesCache[pkg].forEach(depPkg => {
+        remove(depPkg, "implicit");
       });
     }
   } else {
