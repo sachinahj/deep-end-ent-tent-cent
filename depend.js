@@ -1,10 +1,5 @@
 const depend = function(main, ...dependencies) {
-
-  if (!global.dependenciesCache[main]) {
-    global.dependenciesCache[main] = [];
-  }
-
-  global.dependenciesCache[main].push(...dependencies);
+  global.dependenciesCache[main] = dependencies;
   console.log("dependenciesCache", global.dependenciesCache);
 }
 
