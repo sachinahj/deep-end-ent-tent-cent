@@ -1,0 +1,97 @@
+dependenciesCache {}
+installedCache {}
+
+DEPEND   TELNET TCPIP NETCARD
+dependenciesCache { TELNET: [ 'TCPIP', 'NETCARD' ] }
+
+DEPEND TCPIP NETCARD
+dependenciesCache { TELNET: [ 'TCPIP', 'NETCARD' ], TCPIP: [ 'NETCARD' ] }
+
+DEPEND DNS TCPIP NETCARD
+dependenciesCache { TELNET: [ 'TCPIP', 'NETCARD' ],
+  TCPIP: [ 'NETCARD' ],
+  DNS: [ 'TCPIP', 'NETCARD' ] }
+
+DEPEND  BROWSER   TCPIP  HTML
+dependenciesCache { TELNET: [ 'TCPIP', 'NETCARD' ],
+  TCPIP: [ 'NETCARD' ],
+  DNS: [ 'TCPIP', 'NETCARD' ],
+  BROWSER: [ 'TCPIP', 'HTML' ] }
+
+INSTALL NETCARD
+installing explicit NETCARD
+
+INSTALL TELNET
+already installed NETCARD
+installing implicit TCPIP
+already installed NETCARD
+installing explicit TELNET
+
+INSTALL foo
+installing explicit foo
+
+REMOVE NETCARD
+cant't remove NETCARD
+
+INSTALL BROWSER
+already installed NETCARD
+already installed TCPIP
+installing implicit HTML
+installing explicit BROWSER
+
+INSTALL DNS
+already installed NETCARD
+already installed TCPIP
+already installed NETCARD
+installing explicit DNS
+
+LIST
+{ NETCARD: 'explicit',
+  TCPIP: 'implicit',
+  TELNET: 'explicit',
+  foo: 'explicit',
+  HTML: 'implicit',
+  BROWSER: 'explicit',
+  DNS: 'explicit' }
+
+REMOVE TELNET
+removing TELNET
+cant't remove TCPIP
+cant't remove NETCARD
+
+REMOVE NETCARD
+cant't remove NETCARD
+
+REMOVE DNS
+removing DNS
+cant't remove TCPIP
+cant't remove NETCARD
+
+REMOVE NETCARD
+cant't remove NETCARD
+
+INSTALL NETCARD
+already installed NETCARD
+
+REMOVE TCPIP
+cant't remove TCPIP
+
+REMOVE BROWSER
+removing BROWSER
+removing TCPIP
+cant't remove NETCARD
+removing HTML
+
+REMOVE TCPIP
+removing TCPIP
+cant't remove NETCARD
+
+LIST
+{ NETCARD: 'explicit', foo: 'explicit' }
+
+END
+dependenciesCache { TELNET: [ 'TCPIP', 'NETCARD' ],
+  TCPIP: [ 'NETCARD' ],
+  DNS: [ 'TCPIP', 'NETCARD' ],
+  BROWSER: [ 'TCPIP', 'HTML' ] }
+installedCache { NETCARD: 'explicit', foo: 'explicit' }

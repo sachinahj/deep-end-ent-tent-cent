@@ -7,6 +7,10 @@ const remove = require("./remove");
 global.dependenciesCache = {};
 global.installedCache = {};
 
+console.log("dependenciesCache", global.dependenciesCache);
+console.log("installedCache", global.installedCache);
+
+
 data.input.forEach(input => {
   console.log("");
   console.log(input);

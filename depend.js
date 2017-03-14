@@ -5,7 +5,7 @@ const depend = function(main, ...dependencies) {
   }
 
   global.dependenciesCache[main].push(...dependencies);
-  console.log("global.dependenciesCache", global.dependenciesCache);
+  console.log("dependenciesCache", global.dependenciesCache);
 }
 
 
