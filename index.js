@@ -4,13 +4,17 @@ const depend = require("./depend");
 const install = require("./install");
 const remove = require("./remove");
 
+// initialize object to hold dependency information about each package
+// flat object with pkg names as keys and array of pkg names as values (aka dependencies)
 global.dependenciesCache = {};
+// initialize object to hold installed packages information
+// flat object with pkg names as keys and "explicit" or "implicit" as values
 global.installedCache = {};
 
 console.log("dependenciesCache", global.dependenciesCache);
 console.log("installedCache", global.installedCache);
 
-
+// loop through each line and call the correct function based on input
 data.input.forEach(input => {
   console.log("");
   console.log(input);
